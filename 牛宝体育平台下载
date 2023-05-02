@@ -1,0 +1,14 @@
+<form action="<?php bloginfo('url'); ?>/" method="GET" role="form">
+    <input type="hidden" name="post_type" value="page">
+    <div class="form-group">
+        <input type="text" name="s" class="form-control" id="" placeholder="Từ khóa">
+    </div>
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+</form>
+这是一个用于 WordPress 网站的搜索表单代码。与标准的 WordPress 搜索表单不同，它包含了一个隐藏的 post_type 字段，可以用来限定搜索的内容类型。
+
+在 WordPress 中，post_type 决定了内容的类型，比如文章（post）、页面（page）、附件（attachment）等等。默认情况下，WordPress 搜索会搜索所有类型的内容，但有时我们可能需要限定搜索的内容类型，这时就可以通过在搜索表单中添加一个隐藏的 post_type 字段来实现。
+
+以上代码中，<input type="hidden" name="post_type" value="page"> 表示限定搜索的内容类型为页面，也就是说，搜索结果只会包含页面，而不包括文章等其他类型的内容。如果要搜索所有类型的内容，可以将 value 的值改为 any。
+
+另外，<?php bloginfo('url'); ?>/ 表示 WordPress 站点的首页地址，这里作为搜索表单的 action 属性，表示提交搜索表单后要跳转到站点的首页进行搜索。如果要将搜索结果显示在当前页面，可以将 action 属性的值设为 <?php echo home_url( '/' ); ?>。
